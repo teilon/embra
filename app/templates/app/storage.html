@@ -1,0 +1,99 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Storage</title>
+		<meta name="description" content="Sticky Table Headers Revisited: Creating functional and flexible sticky table headers" />
+		<meta name="keywords" content="Sticky Table Headers Revisited" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="{% static 'app/favicon.ico' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/demo.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/component.css' %}" />
+</head>
+<body>
+    <div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="#"><span>Previous</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="#"><span>Embra</span></a></span>
+			</div>
+			<header>
+				<h1>Sticky Table Headers <em>Revisited</em> <span>Creating functional and flexible sticky table headers</span></h1>
+				<nav class="codrops-demos">
+					<a class="current-demo" href="{% url 'index' %}" title="Basic Usage">Basic Usage</a>
+					<a href="{% url 'index2' %}" title="Biaxial Headers">Biaxial Headers</a>
+					<a href="{% url 'index3' %}" title="Wide Tables">Wide Tables</a>
+				</nav>
+			</header>
+			<div class="component">
+				<h2>Basic usage</h2>
+				<p>This is a basic usage example. Scroll down to see the sticky table header in action. And of course, multiple instances are supported. Tables are pre-populated with random user data retrieved from the <a href="http://randomuser.me/" title="Random User Generator">Random User Generator</a>.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>m1</th>
+							<th>m2</th>
+							<th>m3</th>
+							<th>m4</th>
+							<th>m5</th>
+							<th>m6</th>
+							<th>m7</th>
+							<th>m8</th>
+							<th>m9</th>
+							<th>m10</th>
+							<th>w1</th>
+							<th>w2</th>
+							<th>w3</th>
+							<th>w4</th>
+							<th>w5</th>
+							<th>w6</th>
+							<th>w7</th>
+							<th>w8</th>
+							<th>w9</th>
+							<th>w10</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="user-name">gary coleman</td>
+							<td>100</td>
+							<td>50</td>
+							<td>10</td>
+							<td>100</td>
+							<td>50</td>
+							<td>10</td>
+							<td>1500</td>
+							<td>50</td>
+							<td>10</td>
+							<td>100</td>
+							<td>50</td>
+							<td>10</td>
+							<td>100</td>
+							<td>50</td>
+							<td>10</td>
+							<td>100</td>
+							<td>50</td>
+							<td>10</td>
+							<td>100</td>
+							<td>50</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<section class="related">
+				<p>If you enjoyed these effects you might also like:</p>
+				<div><a href="http://tympanus.net/Development/HeaderEffects/"><h4>On Scroll Header Effects</h4></a></div>
+				<div><a href="http://tympanus.net/Development/MultiElementSelection/"><h4>Multi-Item Selection</h4></a></div>
+			</section>
+		</div><!-- /container -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+		<script src="{% static 'app/js/jquery.stickyheader.js' %}"></script>
+</body>
+</html>
