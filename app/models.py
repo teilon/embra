@@ -52,24 +52,6 @@ class Transaction(models.Model):
     product_set = models.ForeignKey('ProductSet', on_delete=models.CASCADE)
     creation_date = models.DateTimeField(auto_now_add=True)
 
-    def create_transaction(self, status, psdict):
-        product_set = self.new_product_set(psdict)
-        if status == 'AC':
-            pass
-        if status == 'RT':
-            pass
-        if status == 'RC':
-            pass
-
-    def new_product_set(self, psdict):
-        ps = ProductSet(m1=int(psdict['m1']), m2=int(psdict['m2']), m3=int(psdict['m3']), m4=int(psdict['m4']),
-                        m5=int(psdict['m5']), m6=int(psdict['m6']), m7=int(psdict['m7']), m8=int(psdict['m8']),
-                        m9=int(psdict['m9']), m10=int(psdict['m10']), w1=int(psdict['w1']), w2=int(psdict['w2']),
-                        w3=int(psdict['w3']), w4=int(psdict['w4']), w5=int(psdict['w5']), w6=int(psdict['w6']),
-                        w7=int(psdict['w7']), w8=int(psdict['w8']), w9=int(psdict['w9']), w10=int(psdict['w10']))
-        ps.save()
-        return ps
-
 
 class Storage(models.Model):
     product_set = models.ForeignKey('ProductSet', on_delete=models.CASCADE)

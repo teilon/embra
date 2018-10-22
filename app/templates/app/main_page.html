@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+
+{% block first_page %}
+	<div class="container">
+		<!-- Top Navigation -->
+		<div class="codrops-top clearfix">
+			<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/"><span>Previous Demo</span></a>
+			<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18116"><span>Back to the Codrops Article</span></a></span>
+		</div>
+		<header>
+			{% block header %}
+			{% endblock %}
+		</header>
+
+		{% block content %}
+		{% endblock %}
+
+		{% block footer %}
+		{% endblock %}
+	</div><!-- /container -->
+{% endblock %}

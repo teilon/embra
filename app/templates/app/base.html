@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Embra Qazaqstan</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="Embra Qazaqstan" />
+		<meta name="author" content="Data" />
+		<link rel="shortcut icon" href="{% static 'app/favicon.ico' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/demo.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/component.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/input.css' %}" />
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+<body>
+
+    {% block first_page %}
+    {% endblock %}
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+		<script src="{% static 'app/js/jquery.stickyheader.js' %}"></script>
+</body>
+</html>

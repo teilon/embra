@@ -1,0 +1,47 @@
+{% extends 'app/main_page.html' %}
+
+{% block header %}
+<h1>Sticky Table Headers <em>Revisited</em> <span>Creating functional and flexible sticky table headers</span></h1>
+<nav class="codrops-demos">
+    <a href="{% url 'index' %}" title="Back"><- Back</a>
+    <a class="current-demo" href="{% url 'client_list' %}" title="Client List">Client List</a>
+    <a href="{% url 'client_new' %}" title="New Client">Add new client</a>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+<div class="component">
+	<h2>Basic usage</h2>
+	<p>This is a basic usage example. Scroll down to see the sticky table header in action. And of course, multiple instances are supported. Tables are pre-populated with random user data retrieved from the <a href="http://randomuser.me/" title="Random User Generator">Random User Generator</a>.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Form</th>
+			</tr>
+		</thead>
+		<tbody>
+            {% for client in clients %}
+                <div class="client">
+                    <h1></h1>
+                    <p></p>
+                    <tr>
+                        <td class="user-name"><a href="{% url 'client_detail' pk=client.pk %}">{{ client.name }}</a></td>
+                        <td class="user-email">{{ client.form }}</td>
+                    </tr>
+                </div>
+            {% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}
+
+
+{% block footer %}
+<section class="related">
+	<p>If you enjoyed these effects you might also like:</p>
+	<div><a href="http://tympanus.net/Development/HeaderEffects/"><h4>On Scroll Header Effects</h4></a></div>
+	<div><a href="http://tympanus.net/Development/MultiElementSelection/"><h4>Multi-Item Selection</h4></a></div>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'app/main_page.html' %}
+
+{% block header %}
+<h1>Sticky Table Headers <em>Revisited</em> <span>Creating functional and flexible sticky table headers</span></h1>
+<nav class="codrops-demos">
+    <a href="{% url 'index' %}" title="Back"><- Back</a>
+    <a href="{% url 'index2' %}" title="Biaxial Headers">Biaxial Headers</a>
+    <a href="{% url 'index3' %}" title="Wide Tables">Wide Tables</a>
+    <a href="{% url 'storage' %}" title="Storage">Storage</a>
+    <a href="{% url 'start_storage' %}" title="Start storage">Start storage</a>
+</nav>
+{% endblock %}
+
+
+{% block footer %}
+<section class="related">
+	<p>If you enjoyed these effects you might also like:</p>
+	<div><a href="http://tympanus.net/Development/HeaderEffects/"><h4>On Scroll Header Effects</h4></a></div>
+	<div><a href="http://tympanus.net/Development/MultiElementSelection/"><h4>Multi-Item Selection</h4></a></div>
+</section>
+{% endblock %}
