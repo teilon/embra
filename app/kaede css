@@ -1,0 +1,42 @@
+<section class="content">
+    <h2>Kaede</h2>
+    <span class="input input--kaede">
+        <input class="input__field input__field--kaede" type="text" id="input-35" />
+        <label class="input__label input__label--kaede" for="input-35">
+            <span class="input__label-content input__label-content--kaede">First Name</span>
+        </label>
+    </span>
+    <span class="input input--kaede">
+        <input class="input__field input__field--kaede" type="text" id="input-36" />
+        <label class="input__label input__label--kaede" for="input-36">
+            <span class="input__label-content input__label-content--kaede">Last Name</span>
+        </label>
+    </span>
+    <span class="input input--kaede">
+        <input class="input__field input__field--kaede" type="text" id="input-37" />
+        <label class="input__label input__label--kaede" for="input-37">
+            <span class="input__label-content input__label-content--kaede">Website</span>
+        </label>
+    </span>
+</section>
+
+forms
+
+# fields = ('username', 'password')
+# widgets = {
+#     'username': TextInput(attrs={'class': 'form__input', 'type': 'text'}),
+#     'password': TextInput(attrs={'class': 'form__input', 'type': 'password'}),
+# }
+
+templates
+
+{% for field in form %}
+    <div class="form__item">
+        <label class="form__label" for="{{ field.name }}">{{ field.label }}</label>
+        {{ field }}
+    </div>
+{% endfor %}
+<div class="form__item form__item--actions">
+    <span>Already have an account? <a class="form__link" href="#">Login here</a></span>
+    <input class="form__button" type="submit" name="signup" value="Signup">
+</div>
