@@ -40,3 +40,4 @@ templates
     <span>Already have an account? <a class="form__link" href="#">Login here</a></span>
     <input class="form__button" type="submit" name="signup" value="Signup">
 </div>
+<button type="submit" class="save btn btn-default">Save</button>

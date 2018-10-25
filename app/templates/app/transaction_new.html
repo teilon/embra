@@ -1,22 +1,76 @@
 {% extends 'app/main_page.html' %}
+{% load staticfiles %}
 
-{% block header %}
-<h1>Sticky Table Headers <em>Revisited</em> <span>Creating functional and flexible sticky table headers</span></h1>
-<nav class="codrops-demos">
-    <a href="{% url 'transaction_list' %}" title="Back"><- Client list</a>
-    <a class="current-demo" href="{% url 'transaction_new' %}" title="New Transaction">Add new transaction</a>
-</nav>
+{% block links %}
+	<link rel="stylesheet" type="text/css" href="{% static 'app/css/input.css' %}" />
 {% endblock %}
 
+{% block header %}
+	<h1>Sticky Table Headers <em>Revisited</em> <span>Creating functional and flexible sticky table headers</span></h1>
+	<nav class="codrops-demos">
+		<a href="{% url 'transaction_list' %}" title="Back"><- Client list</a>
+		<a class="current-demo" href="{% url 'transaction_new' %}" title="New Transaction">Add new transaction</a>
+	</nav>
+{% endblock %}
 
 {% block content %}
 <div class="component">
 	<h2>New client</h2>
 	<p>This is a basic usage example. Scroll down to see the sticky table header in action. And of course, multiple instances are supported. Tables are pre-populated with random user data retrieved from the <a href="http://randomuser.me/" title="Random User Generator">Random User Generator</a>.</p>
-	<form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+
+	<div class="component">
+		<h2>Kaede</h2>
+		<form method="POST" class="post-form">{% csrf_token %}
+			<section class="content">
+
+			{% for field in form %}
+				<span class="input input--kaede">
+					<input class="input__field input__field--kaede" type="text" id="{{ field.name }}" />
+					<label class="input__label input__label--kaede" for="{{ field.name }}">
+						<span class="input__label-content input__label-content--kaede">{{ field.name }}</span>
+					</label>
+				</span>
+			{% endfor %}
+			</section>
+			<button type="submit" class="save btn btn-default">Save</button>
+		</form>
+	</div>
+	<script src="{% static 'app/js/classie.js' %}"></script>
+	<script>
+		(function() {
+			// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+			if (!String.prototype.trim) {
+				(function() {
+					// Make sure we trim BOM and NBSP
+					var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+					String.prototype.trim = function() {
+						return this.replace(rtrim, '');
+					};
+				})();
+			}
+
+			[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+				// in case the input is already filled..
+				if( inputEl.value.trim() !== '' ) {
+					classie.add( inputEl.parentNode, 'input--filled' );
+				}
+
+				// events:
+				inputEl.addEventListener( 'focus', onInputFocus );
+				inputEl.addEventListener( 'blur', onInputBlur );
+			} );
+
+			function onInputFocus( ev ) {
+				classie.add( ev.target.parentNode, 'input--filled' );
+			}
+
+			function onInputBlur( ev ) {
+				if( ev.target.value.trim() === '' ) {
+					classie.remove( ev.target.parentNode, 'input--filled' );
+				}
+			}
+		})();
+	</script>
 </div>
 {% endblock %}
 
